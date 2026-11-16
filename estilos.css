@@ -1,0 +1,60 @@
+/*  Color texto y fondo  rgb() #hexadecimal oklch() hls() */
+header{
+    color:blueviolet;
+    background-color: rgba(127, 255, 212, 0.596);
+    text-align: center;
+    padding: 10px;
+}
+nav{
+    background-color:rgba(44, 194, 144, 0.596);
+    text-align: center;
+}
+h2{
+    color:olivedrab;
+    border: 1px dashed;
+}
+footer{
+    background-color: rgba(127, 255, 212, 0.596);
+    text-align: center;
+}
+
+/* Dar formato a una marca dentro de otra */
+
+
+
+
+/* Centrado de texto */
+
+
+/* Colocar bordes*/
+table, tr, td {
+    border: 1px solid;
+}
+
+
+/* Id */
+
+
+
+/* Clases */
+.lm{
+    color:crimson;
+    background-color: lemonchiffon;
+}
+.bonheur-royale-regular {
+  font-family: 'Bonheur Royale', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Pseudoclase Hover*/
+a:hover{
+    color:lightcoral;
+    cursor:wait;
+}
+
+/* Decoracion de texto */
+a{
+    text-decoration: none;
+}
