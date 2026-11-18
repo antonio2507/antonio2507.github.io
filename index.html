@@ -7,28 +7,79 @@
     <meta name="author" content="Antonio">
     <meta name="keywords" content="página principal, html, restaurante">
     <link rel="icon" type="image/png" href="restaurante/img/logo.png">
+    <link rel="preload" href="img/windowButton.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="fonts/MSW98UI_regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/MSW98UI_bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="style.css" as="style">
+    <link href="estilos.css" rel="stylesheet">
     <title>Pagina principal</title>
 </head>
 <body>
-
-<header>
-    <h1>Página principal de Antonio</h1>
-</header>
-
-<nav>
-    <a href="restaurante/index.html">Restaurante</a>
-    <a href="horario/index.html">Horario</a>
-    <a href="formularios/index.html">Formularios</a>
-</nav>
-
-<main>
-
-
-</main>
-
-<footer>
-    © 2026
-</footer>
-
-</body>
+        <!--====================HEADER====================-->
+        <header>
+            <div class="insetBox banner">
+                <span style="font-family: Arial Black; text-shadow: 0.25rem 0.25rem #0003;">Página principal</span>
+            </div>
+        </header>
+        <!--====================NAVBAR====================-->
+        <nav>
+            <h2>Navegación</h2>
+            <div class="nav">
+                <a class="button" href="restaurante/index.html">Restaurante</a>
+                <a class="button" href="horario/index.html">Horario</a>
+                <a class="button" href="formularios/index.html">Formularios</a>
+            </div>
+        </nav>
+        <!--====================MAIN CONTAINER====================-->
+        <main>
+            <!--====================MIDDLE CONTENT====================-->
+            <div class="layoutColumn mid">
+                <div class="outsetBox">
+                    <h2>Bienvenido</h2>
+                    <div class="insetBox">
+                        <h1>Página principal de Antonio</h1>
+                        <h3>Sobre el proyecto</h3>
+                        <p>Bienvenido a la <b>página principal del proyecto</b> de Lenguaje de Marcas. Aquí podrás acceder a las distintas prácticas realizadas durante el curso.</p>
+                        <hr>
+                        <h3>Secciones disponibles:</h3>
+                        <ul>
+                            <li><a href="restaurante/index.html">Restaurante</a>: Proyecto web del restaurante.</li>
+                            <li><a href="horario/index.html">Horario</a>: Tabla de horario escolar.</li>
+                            <li><a href="formularios/index.html">Formularios</a>: Prácticas de formularios en HTML.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--====================LEFT SIDEBAR====================-->
+            <div class="layoutColumn left">
+                <div class="outsetBox">
+                    <h2>Información</h2>
+                    <h3>Autor</h3>
+                    <p>Proyecto desarrollado por <b>Antonio</b> para la asignatura de Lenguaje de Marcas.</p>
+                </div>
+            </div>
+            <!--====================RIGHT SIDEBAR====================-->
+            <div class="layoutColumn right">
+                <div class="outsetBox">
+                    <h2>Estado</h2>
+                    <h3>Actualizaciones</h3>
+                    <textarea style="height: 12rem;">Repositorio: antonio2507.github.io
+Año: 2026
+Plantilla adaptada al estilo Windows 95-98.</textarea>
+                </div>
+            </div>
+        </main>
+        <!--====================FOOTER====================-->
+        <footer>
+            <p>
+                <a href="restaurante/index.html">Restaurante</a> | 
+                <a href="horario/index.html">Horario</a> | 
+                <a href="formularios/index.html">Formularios</a><br>
+                © 2026 Antonio | Layout by 
+                <!--====================!!!WARNING: DO NOT REMOVE CREDIT NOTE!!!====================-->
+                <a href="https://404city.neocities.org/" target="_blank">404CITY</a>
+                <!--====================!!!WARNING: DO NOT REMOVE CREDIT NOTE!!!====================-->
+            </p>
+        </footer>
+    </body>
 </html>

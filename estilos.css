@@ -1,60 +1,258 @@
 /*  Color texto y fondo  rgb() #hexadecimal oklch() hls() */
-header{
-    color:blueviolet;
-    background-color: rgba(127, 255, 212, 0.596);
-    text-align: center;
-    padding: 10px;
+/* FUENTES */
+
+@font-face {
+    font-family: "MSW98UI";
+    src: url("MSW98UI_regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: normal;
 }
-nav{
-    background-color:rgba(44, 194, 144, 0.596);
-    text-align: center;
-}
-h2{
-    color:olivedrab;
-    border: 1px dashed;
-}
-footer{
-    background-color: rgba(127, 255, 212, 0.596);
-    text-align: center;
+@font-face {
+    font-family: "MSW98UI";
+    src: url("MSW98UI_bold.woff2") format("woff2");
+    font-display: swap;
+    font-weight: bold;
 }
 
 /* Dar formato a una marca dentro de otra */
-
-
-
-
-/* Centrado de texto */
-
-
-/* Colocar bordes*/
-table, tr, td {
-    border: 1px solid;
+/* ESTILOS GENERALES */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    font-family: 'MSW98UI', monospace;
+    line-height: 1;
+    cursor: default;
+    -webkit-text-size-adjust: none;
+    background: #077;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0;
 }
 
+/* LAYOUT */
+main {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+}
+main, header, nav {
+    width: 100%;
+    max-width: 1000px;
+}
+.layoutColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.layoutColumn.left, .layoutColumn.right {flex: 1;}
+.layoutColumn.mid {
+    flex: 2;
+    order: 2;
+}
+.layoutColumn.left {order: 1;}
+.layoutColumn.right {order: 3;}
+.outsetBox, header, footer, nav {
+    padding: 0.125rem;
+    border: 1.5px outset #fff;
+    border-bottom-color: #666;
+    border-right-color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    background: #bbb;
+}
+.insetBox {
+    border: 1.5px inset #666;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    background: #fff;
+    padding: 0.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0.0625rem;
+}
+.nav {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 100%;
+    gap: 0.125rem;
+}
+.banner {
+    padding: 1.5rem 0.25rem;
+    user-select: none;
+    line-height: 1;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 7rem;
+    flex-wrap: wrap;
+    letter-spacing: -0.25rem;
+}
+footer {
+    width: calc(100% + 1rem);
+    padding-bottom: 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    p {text-align: center;}
+}
+
+/* Texto */
+p, ul {
+    font-size: 1rem;
+    padding: 0.125rem 0.25rem 0.25rem;
+}
+ul {list-style: none;}
+li::before {content: "- ";}
+a {
+    color: #007;
+    text-decoration: underline 1px;
+    cursor: pointer;
+}
+a:hover {color: #00f;}
+hr {
+    border-top: 1px solid #aaa;
+    margin: 0.25rem 0.25rem 0.5rem;
+}
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.5rem 0.25rem 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size: 1rem;
+    background: #009;
+    color: #fff;
+    padding: 0.125rem 0.25rem;
+    position: relative;
+    user-select: none;
+}
+h2::after {
+    content: "";
+    position: absolute;
+    width: 3.25rem;
+    height: 1rem;
+    top: 0.125rem;
+    right: 0.125rem;
+    background: url("img/windowButton.svg");
+    background-size: cover;
+}
+h3 {
+    font-size: 1.125rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.25rem 0.25rem 0.125rem;
+    text-decoration: underline;
+}
+textarea {
+    resize: none;
+    padding: 0.5rem;
+    font-family: 'MSW98UI', monospace;
+    font-size: 1rem;
+    background: #ffd;
+    border: 1.5px inset #666;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    line-height: 1;
+    margin: 0.0625rem;
+}
+
+/* Colocar botones*/
+button {all: unset;}
+.button, button {
+    font-size: 1rem;
+    padding: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    user-select: none;
+    cursor: pointer;
+    border: 1.5px outset #fff;
+    border-bottom-color: #666;
+    border-right-color: #666;
+    background: #bbb;
+    margin: 0.125rem;
+}
+.button:hover, button:hover {
+    outline: 1px dotted #000;
+    outline-offset: -0.25rem;
+    color: #000;
+}
+.button:active, button:active {
+    border: 1.5px inset #fff;
+    border-top-color: #666;
+    border-left-color: #666;
+}
+
+/* RESPONSIVE */
+@media (min-width: calc(1001px + 3rem)) {.layoutColumn.mid p {text-align: justify;}}
+@media (max-width: 768px) {
+    html {font-size: clamp(16px, 5vw, 24px);}
+    main {flex-direction: column;}
+    .nav {grid-template-columns: 1fr 1fr;}
+    .banner {
+        font-size: 4rem;
+        padding: 1rem;
+        gap:0.5rem;
+    }
+    .layoutColumn.mid {order: 1;}
+    .layoutColumn.left {order: 2;}
+    .layoutColumn.right {order: 3;}
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {width: 1rem;}
+::-webkit-scrollbar-track {
+    background: #eee;
+    cursor: default;
+}
+::-webkit-scrollbar-thumb {
+    border: 1.5px outset #fff;
+    border-bottom-color: #666;
+    border-right-color: #666;
+    background: #bbb;
+    cursor: default;
+}
+::-webkit-scrollbar-button {
+    border: 1.5px outset #fff;
+    border-bottom-color: #666;
+    border-right-color: #666;
+    background-repeat: no-repeat;
+    cursor: default;
+}
+::-webkit-scrollbar-button:decrement {
+    background: linear-gradient(135deg, #0000 50%, #000 50%), linear-gradient(225deg, #0000 50%, #000 50%), #bbb;
+    background-size: 0.25rem 0.25rem;
+    background-position: calc(50% - 0.125rem) 50%, calc(50% + 0.125rem) 50%;
+    background-repeat: no-repeat;
+}
+::-webkit-scrollbar-button:increment {
+    background: linear-gradient(45deg, #0000 50%, #000 50%), linear-gradient(315deg, #0000 50%, #000 50%), #bbb;
+    background-size: 0.25rem 0.25rem;
+    background-position: calc(50% - 0.125rem) 50%, calc(50% + 0.125rem) 50%;
+    background-repeat: no-repeat;
+}
 
 /* Id */
 
 
 
 /* Clases */
-.lm{
-    color:crimson;
-    background-color: lemonchiffon;
-}
-.bonheur-royale-regular {
-  font-family: 'Bonheur Royale', cursive;
-  font-weight: 400;
-  font-style: normal;
-}
 
 
 /* Pseudoclase Hover*/
-a:hover{
-    color:lightcoral;
-    cursor:wait;
-}
+
 
 /* Decoracion de texto */
-a{
-    text-decoration: none;
-}
